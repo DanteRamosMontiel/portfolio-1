@@ -1,0 +1,31 @@
+/*------------------------------------Reset------------------------------------*/
+/* Reset de márgenes y rellenos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Reset de encabezados y párrafos */
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Reset de listas */
+ul, ol {
+    list-style: none;
+}
+
+/* Ancho maximo de containers */
+.container {
+    max-width: 1400px;
+    overflow: visible;
+}
+
+/* Centrando todo el contenido del body */
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
