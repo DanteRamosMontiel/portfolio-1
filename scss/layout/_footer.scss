@@ -1,1 +1,67 @@
 /*------------------------------------Footer-----------------------------------*/
+.footer{
+    width: 100vw;
+    background-color: #1c1c1c;
+    margin-top: 10rem;
+    @include flex-center;
+    cursor: default;
+    div.container{
+        width: 100%;
+        padding: 80px 50px 40px;
+        @include flex-center;
+        flex-direction: column;
+        .empezar-proyecto{
+            @include flex-around;
+            background-color: $color-2;
+            padding: 30px 25px;
+            border-radius: 15px;
+            width: 100%;
+            position: relative;
+            bottom: 8rem;
+            font-family: $mono;
+            text-align: center;
+            color: #fff;
+            p{
+                font-size: 13px;
+                width: 35%;
+            }
+            a{
+               background: transparent;
+               border: 1px solid #fff;
+               cursor: pointer;
+               padding: 8px 20px;
+               border-radius: 100px;
+               transition: all .3s ease-in-out;
+               text-decoration: none;
+               color: #fff;
+               i{
+                font-size: .8rem;
+               }
+               &:hover{
+                    background-color: #fff;
+                    border-color: #fff;
+                    color: #000;
+               }
+            }
+        }
+        .rights {
+            @include flex-around;
+            gap: 2rem;
+            margin-top: -5rem;
+            color: #ccc3;
+            transition: all .3s ease-in-out;
+            p{
+                font-size: 1.2rem;
+                text-align: center;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        .cp{
+            color: #ccc3;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+    }
+}

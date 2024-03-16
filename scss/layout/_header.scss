@@ -1,55 +1,35 @@
 /*------------------------------------Header-----------------------------------*/
-.navbar{
+.header{
+    @include sizes(100%,auto);
+    max-height: 5rem;
+    background-color: transparent;
+    padding: 1rem;
     @include flex-between;
-    @include sizes(100%,null);
-    padding: 40px;
-    border-radius: 5px;
-    flex-wrap: wrap;
-    box-shadow: 0px 10px 19px 2px rgba(0,0,0,0.21);
-    -webkit-box-shadow: 0px 10px 19px 2px rgba(0,0,0,0.21);
-    -moz-box-shadow: 0px 10px 19px 2px rgba(0,0,0,0.21);
-    animation: header 3s ease-in-out;
-}
-.logo{
-    font-family: $barlow;
-    h1{
-        font-size: 3rem;
-        position: relative;
+    border-bottom: solid $letters-color 1px;
+    .logo{
+        font-family: $mono;
+        font-size: 2.5rem;
         cursor: pointer;
-        letter-spacing: .2rem;
-        transition: all .5s ease;
-         &:before{
-             content: "";
-             position: absolute;
-             bottom: -2px;
-             height: 6px;
-             width: 0px;
-             background: #fe1f79;
-             border-radius: 50px;
-             transition: width 0.5s ease;
-         }
-         &:hover:before{
-             width: 100%;
-         }
-    }
-}
-.nav-links{
-    display: flex;
-    gap: 3rem;
-
-    a{
-        transition: all .5s ease;
-        color: black;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1.5rem;
-        font-family: $barlow;
-        i{
-            font-size: 2rem;
-        }
+        transition: all ease-in-out .2s;
+        color: $letters-color;
         &:hover{
-            scale: 1.1;
+            transform: scale(1.03);
+            &::first-letter{
+                color: $color-2;
+            }
         }
     }
+    nav{
+        @include sizes(200px,none);   
+        @include flex-between;
 
+        a{
+            color: $letters-color;
+            font-size: 2rem;
+            transition: all ease-in-out .2s;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
 }

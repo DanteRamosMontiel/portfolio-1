@@ -1,10 +1,46 @@
 /*-----------------------------------Keyframes---------------------------------*/
-@keyframes header {
-    0% {
-        transform: translateY(-150px);
+@keyframes arrow-down {
+    0%{
+        transform: translateY(0px);
+    }
+
+    25%{
+        transform: translateY(0px);
+    }
+
+    37%{
+        transform: translateY(4px);
+    }
+
+    50%{
+        transform: translateY(0px);
+    }
+
+    62%{
+        transform: translateY(4px);
+    }
+
+    75%{
+        transform: translateY(0px);
     }
 
     100%{
         transform: translateY(0px);
+    }
+}
+
+@keyframes pene {
+    0% {
+        width: 0%;
+    }
+
+    100%{
+        width: 90%;
+    }
+}
+      
+@keyframes transparent {
+    50% {
+      border-color: transparent
     }
 }

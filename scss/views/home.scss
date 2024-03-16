@@ -1,0 +1,253 @@
+body {
+    background-color: $bg-color;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.main1 {
+    margin-top: 7rem;
+    @include flex-center;
+    flex-direction: column;
+    padding: 3rem;
+
+    .blur1 {
+        position: absolute;
+        box-shadow: 0 0 1000px 50px $color-2;
+        z-index: -100;
+    }
+
+    .m1-p1 {
+        font-family: $mono;
+        font-size: 3rem;
+        text-align: center;
+        font-weight: 700;
+        transition: all ease;
+        margin-top: -3rem;
+        margin-bottom: 2rem;
+        color: $letters-color;
+        cursor: default;
+    }
+
+    .m1-p2 {
+        display: flex;
+        align-items: center;
+        font-family: $mono;
+        color: $letters-color;
+        font-size: 14rem;
+        text-align: center;
+        font-weight: 700;
+        overflow: hidden;
+        z-index: 2;
+        animation: pene 1.5s steps(20), transparent .5s step-end infinite alternate;
+        white-space: nowrap;
+        border-right: 3px solid $letters-color;
+        // margin-bottom: 2rem;
+        max-height: 15rem;
+        -webkit-box-reflect:
+            below -65px linear-gradient(to bottom, transparent,
+                rgba(255, 255, 255, 0.03));
+    }
+
+    .m1-p3 {
+        font-family: $borel;
+        font-size: 3rem;
+        text-align: center;
+        color: $color-2;
+        z-index: 1;
+        margin-top: 3rem;
+        cursor: default;
+    }
+
+    a {
+        padding: 1rem 2.5rem;
+        border-radius: 25px;
+        border: solid #fff 2px;
+        cursor: pointer;
+        font-family: $mono;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 1.5rem;
+        transition: all ease .2s;
+        margin-top: 3rem;
+        text-decoration: none;
+        color: #fff;
+        background-color: $bg-color;
+        border: 2px solid #fff;
+
+        &:hover {
+            background-color: #fff;
+            color: #000;
+            border: 2px solid transparent;
+        }
+
+        i {
+            animation: arrow-down infinite ease 2s;
+        }
+    }
+}
+
+.main2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 15rem 0rem;
+    gap: 6rem;
+
+    .blur2 {
+        position: relative;
+        top: 10rem;
+        box-shadow: 0 0 1000px 50px $color-2;
+        z-index: -100;
+    }
+
+    .aboutme {
+        color: #fff;
+        font-family: $mono;
+
+        &-text {
+            h2 {
+                font-size: 2rem;
+                text-decoration: underline
+            }
+
+            p {
+                font-size: 1.2rem;
+                margin-top: 1rem;
+            }
+        }
+
+        &-tecno {
+            margin-top: 2rem;
+
+            h2 {
+                font-size: 2rem;
+                text-decoration: underline
+            }
+
+            div {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+                margin-top: 1rem;
+
+                i {
+                    font-size: 3rem;
+                    text-align: center;
+                    padding: 29.5px 0px;
+                    background-color: $color-3;
+                    border: 2px solid transparent;
+                    border-radius: 15px;
+                    transition: all .3s ease;
+
+                    &:hover {
+                        background-color: #323232;
+                        border-color: #fff;
+                    }
+                }
+            }
+        }
+
+        &-pic {
+            width: 32rem;
+            height: 32rem;
+            border-radius: 50%;
+            @include flex-center;
+            overflow: hidden;
+            -webkit-box-shadow: 0px 0px 59px 11px $color-2;
+            -moz-box-shadow: 0px 0px 59px 11px $color-2;
+            box-shadow: 0px 0px 59px 11px $color-2;
+
+            img {
+                width: 32rem;
+                position: relative;
+                top: 3rem;
+            }
+        }
+    }
+}
+
+.main4 {
+    @include flex-around;
+    flex-direction: column;
+    cursor: default;
+
+    h2 {
+        text-align: center;
+        font-size: 3.5rem;
+        font-family: $mono;
+        text-decoration: underline;
+        color: $letters-color;
+        padding-bottom: 6rem;
+    }
+
+    .services {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        margin-top: -2rem;
+
+        div {
+            background-color: $color-3;
+            border-radius: 15px;
+            padding: 1rem;
+            border: 2px solid transparent;
+            transition: all .2s ease;
+
+            &:hover {
+                background-color: #323232;
+                border-color: #fff;
+            }
+
+            .card-i {
+                display: inline-block;
+                background-color: $color-2;
+                padding: .75rem;
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+                color: $letters-color;
+                border-radius: 5px;
+            }
+
+            h4 {
+                margin-bottom: .5rem;
+                color: $letters-color;
+                font-size: 1.2rem;
+                font-weight: 600;
+                font-family: $mono;
+            }
+
+            p {
+                font-family: $mono;
+                color: #ccc;
+                margin-bottom: 1rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: $letters-color;
+                transition: all .3s ease;
+                font-family: $mono;
+                font-size: 1.3rem;
+
+                i {
+                    font-size: .9rem;
+                }
+
+                &:hover {
+                    color: $color-2;
+                }
+            }
+        }
+    }
+
+    .blur3 {
+        position: relative;
+        left: 35rem;
+        bottom: 13rem;
+        box-shadow: 0 0 1000px 50px $color-2;
+        z-index: -100;
+    }
+}

@@ -1,7 +1,9 @@
 @charset "UTF-8";
 /*----------------------------------Variables----------------------------------*/
 /*---------------------------------Tipografias---------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Borel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 /*------------------------------------Reset------------------------------------*/
 /* Reset de márgenes y rellenos */
 * {
@@ -21,10 +23,9 @@ ul, ol {
   list-style: none;
 }
 
-/* Ancho maximo de containers */
+/* Ancho maximo de containers*/
 .container {
-  max-width: 1400px;
-  overflow: visible;
+  max-width: 1100px;
 }
 
 /* Centrando todo el contenido del body */
@@ -38,75 +39,495 @@ body {
 /*--------------------------------Condicionales--------------------------------*/
 /*----------------------------------Scrollbar----------------------------------*/
 /*------------------------------------Header-----------------------------------*/
-.navbar {
+.header {
+  width: 100%;
+  height: auto;
+  max-height: 5rem;
+  background-color: transparent;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 40px;
-  border-radius: 5px;
-  flex-wrap: wrap;
-  box-shadow: 0px 10px 19px 2px rgba(0, 0, 0, 0.21);
-  -webkit-box-shadow: 0px 10px 19px 2px rgba(0, 0, 0, 0.21);
-  -moz-box-shadow: 0px 10px 19px 2px rgba(0, 0, 0, 0.21);
-  animation: header 3s ease-in-out;
+  border-bottom: solid #fff 1px;
 }
-
-.logo {
-  font-family: "Barlow", sans-serif;
-}
-.logo h1 {
-  font-size: 3rem;
-  position: relative;
+.header .logo {
+  font-family: "Space Mono", monospace;
+  font-size: 2.5rem;
   cursor: pointer;
-  letter-spacing: 0.2rem;
-  transition: all 0.5s ease;
+  transition: all ease-in-out 0.2s;
+  color: #fff;
 }
-.logo h1:before {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  height: 6px;
-  width: 0px;
-  background: #fe1f79;
-  border-radius: 50px;
-  transition: width 0.5s ease;
+.header .logo:hover {
+  transform: scale(1.03);
 }
-.logo h1:hover:before {
-  width: 100%;
+.header .logo:hover::first-letter {
+  color: #1d4ed8;
 }
-
-.nav-links {
+.header nav {
+  width: 200px;
+  height: none;
   display: flex;
-  gap: 3rem;
+  justify-content: space-between;
+  align-items: center;
 }
-.nav-links a {
-  transition: all 0.5s ease;
-  color: black;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.5rem;
-  font-family: "Barlow", sans-serif;
-}
-.nav-links a i {
+.header nav a {
+  color: #fff;
   font-size: 2rem;
+  transition: all ease-in-out 0.2s;
 }
-.nav-links a:hover {
-  scale: 1.1;
+.header nav a:hover {
+  transform: scale(1.1);
 }
 
 /*------------------------------------Footer-----------------------------------*/
-/*-------------------------------------Home------------------------------------*/
-/*-------------------------------------Shop------------------------------------*/
-/*-----------------------------------Carrito-----------------------------------*/
+.footer {
+  width: 100vw;
+  background-color: #1c1c1c;
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+.footer div.container {
+  width: 100%;
+  padding: 80px 50px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.footer div.container .empezar-proyecto {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #1d4ed8;
+  padding: 30px 25px;
+  border-radius: 15px;
+  width: 100%;
+  position: relative;
+  bottom: 8rem;
+  font-family: "Space Mono", monospace;
+  text-align: center;
+  color: #fff;
+}
+.footer div.container .empezar-proyecto p {
+  font-size: 13px;
+  width: 35%;
+}
+.footer div.container .empezar-proyecto a {
+  background: transparent;
+  border: 1px solid #fff;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 100px;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  color: #fff;
+}
+.footer div.container .empezar-proyecto a i {
+  font-size: 0.8rem;
+}
+.footer div.container .empezar-proyecto a:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: #000;
+}
+.footer div.container .rights {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  margin-top: -5rem;
+  color: rgba(204, 204, 204, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+.footer div.container .rights p {
+  font-size: 1.2rem;
+  text-align: center;
+}
+.footer div.container .rights p:hover {
+  text-decoration: underline;
+}
+.footer div.container .cp {
+  color: rgba(204, 204, 204, 0.2);
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+body {
+  background-color: #18181b;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.main1 {
+  margin-top: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem;
+}
+.main1 .blur1 {
+  position: absolute;
+  box-shadow: 0 0 1000px 50px #1d4ed8;
+  z-index: -100;
+}
+.main1 .m1-p1 {
+  font-family: "Space Mono", monospace;
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 700;
+  transition: all ease;
+  margin-top: -3rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  cursor: default;
+}
+.main1 .m1-p2 {
+  display: flex;
+  align-items: center;
+  font-family: "Space Mono", monospace;
+  color: #fff;
+  font-size: 14rem;
+  text-align: center;
+  font-weight: 700;
+  overflow: hidden;
+  z-index: 2;
+  animation: pene 1.5s steps(20), transparent 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  border-right: 3px solid #fff;
+  max-height: 15rem;
+  -webkit-box-reflect: below -65px linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.03));
+}
+.main1 .m1-p3 {
+  font-family: "Borel", cursive;
+  font-size: 3rem;
+  text-align: center;
+  color: #1d4ed8;
+  z-index: 1;
+  margin-top: 3rem;
+  cursor: default;
+}
+.main1 a {
+  padding: 1rem 2.5rem;
+  border-radius: 25px;
+  border: solid #fff 2px;
+  cursor: pointer;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  transition: all ease 0.2s;
+  margin-top: 3rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: #18181b;
+  border: 2px solid #fff;
+}
+.main1 a:hover {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid transparent;
+}
+.main1 a i {
+  animation: arrow-down infinite ease 2s;
+}
+
+.main2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding: 15rem 0rem;
+  gap: 6rem;
+}
+.main2 .blur2 {
+  position: relative;
+  top: 10rem;
+  box-shadow: 0 0 1000px 50px #1d4ed8;
+  z-index: -100;
+}
+.main2 .aboutme {
+  color: #fff;
+  font-family: "Space Mono", monospace;
+}
+.main2 .aboutme-text h2 {
+  font-size: 2rem;
+  text-decoration: underline;
+}
+.main2 .aboutme-text p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+.main2 .aboutme-tecno {
+  margin-top: 2rem;
+}
+.main2 .aboutme-tecno h2 {
+  font-size: 2rem;
+  text-decoration: underline;
+}
+.main2 .aboutme-tecno div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.main2 .aboutme-tecno div i {
+  font-size: 3rem;
+  text-align: center;
+  padding: 29.5px 0px;
+  background-color: #27272a;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+.main2 .aboutme-tecno div i:hover {
+  background-color: #323232;
+  border-color: #fff;
+}
+.main2 .aboutme-pic {
+  width: 32rem;
+  height: 32rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 59px 11px #1d4ed8;
+  -moz-box-shadow: 0px 0px 59px 11px #1d4ed8;
+  box-shadow: 0px 0px 59px 11px #1d4ed8;
+}
+.main2 .aboutme-pic img {
+  width: 32rem;
+  position: relative;
+  top: 3rem;
+}
+
+.main4 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  cursor: default;
+}
+.main4 h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  font-family: "Space Mono", monospace;
+  text-decoration: underline;
+  color: #fff;
+  padding-bottom: 6rem;
+}
+.main4 .services {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: -2rem;
+}
+.main4 .services div {
+  background-color: #27272a;
+  border-radius: 15px;
+  padding: 1rem;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+.main4 .services div:hover {
+  background-color: #323232;
+  border-color: #fff;
+}
+.main4 .services div .card-i {
+  display: inline-block;
+  background-color: #1d4ed8;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #fff;
+  border-radius: 5px;
+}
+.main4 .services div h4 {
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "Space Mono", monospace;
+}
+.main4 .services div p {
+  font-family: "Space Mono", monospace;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+.main4 .services div a {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  font-family: "Space Mono", monospace;
+  font-size: 1.3rem;
+}
+.main4 .services div a i {
+  font-size: 0.9rem;
+}
+.main4 .services div a:hover {
+  color: #1d4ed8;
+}
+.main4 .blur3 {
+  position: relative;
+  left: 35rem;
+  bottom: 13rem;
+  box-shadow: 0 0 1000px 50px #1d4ed8;
+  z-index: -100;
+}
+
 /*----------------------------------Mediaquerys--------------------------------*/
+@media (width < 1200px) {
+  .main2 {
+    padding: 3rem;
+    margin: 4rem 0rem 0rem 0rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr;
+    justify-items: center;
+    gap: 3rem;
+  }
+  .main2 .aboutme-pic {
+    grid-row: 1;
+    width: 27rem;
+    height: 27rem;
+  }
+  .main2 .aboutme-pic img {
+    width: 27rem;
+    top: 3rem;
+  }
+  .main2 .aboutme-text {
+    grid-row: 2;
+  }
+  .main2 .aboutme-text h2 {
+    text-align: center;
+  }
+  .main2 .aboutme-text p {
+    text-align: center;
+    padding: 1rem;
+  }
+  .main2 .aboutme-tecno h2 {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+  .main4 h2 {
+    font-size: 3rem;
+  }
+  .main4 .services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: -2rem;
+    padding: 0rem 3rem;
+  }
+}
+@media (width < 800px) {
+  .header {
+    padding: 1rem 2rem;
+  }
+  .header .logo {
+    font-size: 2rem;
+  }
+  .main1 {
+    margin-top: 9rem;
+  }
+  .main1 .m1-p1 {
+    font-size: 2rem;
+  }
+  .main1 .m1-p2 {
+    font-size: 11rem;
+  }
+  .main1 .m1-p3 {
+    font-size: 2.6rem;
+  }
+  .footer .empezar-proyecto p {
+    display: none;
+  }
+}
+@media (width < 600px) {
+  .header .logo {
+    font-size: 1.5rem;
+  }
+  .header nav {
+    width: 150px;
+  }
+  .header nav a {
+    font-size: 1.5rem;
+  }
+  .main1 .m1-p2 {
+    font-size: 8rem;
+  }
+  .main1 .m1-p3 {
+    font-size: 2rem;
+  }
+  .main2 {
+    margin: 0rem 0rem 7rem 0rem;
+    gap: 0;
+  }
+  .main2 .aboutme-tecno {
+    grid-row: 3;
+  }
+  .main2 .aboutme-tecno h2 {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+  .main2 .aboutme-tecno div {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .main2 .aboutme-pic {
+    width: 20rem;
+    height: 20rem;
+  }
+  .main2 .aboutme-pic img {
+    width: 20rem;
+  }
+  .main4 .services {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: -4rem;
+    padding: 0rem 1.5rem;
+  }
+}
 /*-----------------------------------Keyframes---------------------------------*/
-@keyframes header {
+@keyframes arrow-down {
   0% {
-    transform: translateY(-150px);
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
+  37% {
+    transform: translateY(4px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  62% {
+    transform: translateY(4px);
+  }
+  75% {
+    transform: translateY(0px);
   }
   100% {
     transform: translateY(0px);
+  }
+}
+@keyframes pene {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+@keyframes transparent {
+  50% {
+    border-color: transparent;
   }
 }
 

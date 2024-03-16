@@ -1,6 +1,5 @@
 /*-----------------------------------Mixins------------------------------------*/
 //Posicionamiento//
-
 @mixin flex-personalizated ($justify, $align, $direction) {
     display: flex;
     justify-content: $justify;
